@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <p> Mis à jour le {{ lastUpdate  | async | date : 'EEEE d MMMM Y' | uppercase }} </p>
+      <!-- <p> Mis à jour le {{ lastUpdate | date }} </p>  voir config angular pour la date-->
+      <ul class="list-group">
+       <!-- <app-appareil [appareilName]="appareilOne" [appareilStatus]="'éteint'"></app-appareil>  -->
+        <!-- les '' dans les "" sur le status permettent d'écrire directement la valeur de la propriété -->
+        <!-- <app-appareil [appareilName]="appareilTwo" [appareilStatus]="'allumé'"></app-appareil>
+        <app-appareil [appareilName]="appareilThree" [appareilStatus]="'éteint'"></app-appareil>
+        <app-appareil [appareilName]="appareilFour" [appareilStatus]="'allumé'"></app-appareil>  -->
+
+        <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
+
+      </ul>
+      <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button> 
+      <!-- les crochets sont utilisés pour lier à une propriété et les parenthèses pour réagir  un évenement du dom -->
+      <!-- <button class="btn btn-success" [disabled]="!isAuth">Tout allumer</button>   cette méthode est le property binding voir app.component.ts -->
+    </div>
+  </div>
+</div>
