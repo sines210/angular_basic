@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+      <p> Mis à jour le {{ lastUpdate  | async | date : 'EEEE d MMMM Y' | uppercase }} </p>
+      <ul class="list-group">
+
+        <app-appareil *ngFor="let appareil of appareils ; let i = index" [indexOfAppareil]="i" [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
+
+      </ul>
+      <button class="btn btn-success" (click)="onAllumer()">Tout allumer</button> 
+      <button class="btn btn-danger" (click)="onEteindre()">Tout éteindre</button> 
+    </div>
+  </div>
+</div>
+
+
+<!-- INJECTION DE SERVICES AVEC ANGULAR
+  3 injections possibles :
+-Injection dans app.module ce qui permet de les rendre disponibles pour tous les component et pour les autres services
+-Injection dans app.component.ts (component racine) dispo pour tous les component mais pas pour les services 
+-Injection dans un autre component, le service n'est dispo que ds ce component et ses enfants
+-->
