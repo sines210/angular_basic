@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppareilService } from '../services/appareil.service';
-import { Router} from '@angular/router';
+import { Router }  from '@angular/router';
 
 
 @Component({
@@ -14,7 +14,6 @@ export class EditAppareilComponent implements OnInit {
 
   @Input() default : string  = "éteint";
 
-  // default = "éteint";
 
 
   constructor(private appareilService:AppareilService, private router:Router) { }
