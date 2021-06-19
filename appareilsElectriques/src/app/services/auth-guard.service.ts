@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { Injectable , Input} from "@angular/core";
 import { AuthService} from "./auth.service";
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Injectable()//permet d'importer un service dans un autre service
