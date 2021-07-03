@@ -3,30 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "appareilsElectriques": {
+    "crudAngularMongo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -39,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/appareilsElectriques/browser",
+            "outputPath": "dist/crudAngularMongo/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "appareilsElectriques:build:production"
+              "browserTarget": "crudAngularMongo:build:production"
             },
             "development": {
-              "browserTarget": "appareilsElectriques:build:development"
+              "browserTarget": "crudAngularMongo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "appareilsElectriques:build"
+            "browserTarget": "crudAngularMongo:build"
           }
         },
         "test": {
@@ -119,6 +100,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,7 +109,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/appareilsElectriques/server",
+            "outputPath": "dist/crudAngularMongo/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -154,12 +136,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "appareilsElectriques:build:development",
-              "serverTarget": "appareilsElectriques:server:development"
+              "browserTarget": "crudAngularMongo:build:development",
+              "serverTarget": "crudAngularMongo:server:development"
             },
             "production": {
-              "browserTarget": "appareilsElectriques:build:production",
-              "serverTarget": "appareilsElectriques:server:production"
+              "browserTarget": "crudAngularMongo:build:production",
+              "serverTarget": "crudAngularMongo:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -173,12 +155,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "appareilsElectriques:build:production",
-              "serverTarget": "appareilsElectriques:server:production"
+              "browserTarget": "crudAngularMongo:build:production",
+              "serverTarget": "crudAngularMongo:server:production"
             },
             "development": {
-              "browserTarget": "appareilsElectriques:build:development",
-              "serverTarget": "appareilsElectriques:server:development"
+              "browserTarget": "crudAngularMongo:build:development",
+              "serverTarget": "crudAngularMongo:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -186,5 +168,5 @@
       }
     }
   },
-  "defaultProject": "appareilsElectriques"
+  "defaultProject": "crudAngularMongo"
 }

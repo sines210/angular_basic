@@ -3,30 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "appareilsElectriques": {
+    "appElectriquesSSR": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -39,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/appareilsElectriques/browser",
+            "outputPath": "dist/appElectriquesSSR/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "appareilsElectriques:build:production"
+              "browserTarget": "appElectriquesSSR:build:production"
             },
             "development": {
-              "browserTarget": "appareilsElectriques:build:development"
+              "browserTarget": "appElectriquesSSR:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "appareilsElectriques:build"
+            "browserTarget": "appElectriquesSSR:build"
           }
         },
         "test": {
@@ -124,10 +105,22 @@
             "scripts": []
           }
         },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "angular-starter:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-starter:serve:production"
+            }
+          }
+        },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/appareilsElectriques/server",
+            "outputPath": "dist/appElectriquesSSR/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -154,12 +147,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "appareilsElectriques:build:development",
-              "serverTarget": "appareilsElectriques:server:development"
+              "browserTarget": "appElectriquesSSR:build:development",
+              "serverTarget": "appElectriquesSSR:server:development"
             },
             "production": {
-              "browserTarget": "appareilsElectriques:build:production",
-              "serverTarget": "appareilsElectriques:server:production"
+              "browserTarget": "appElectriquesSSR:build:production",
+              "serverTarget": "appElectriquesSSR:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -173,12 +166,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "appareilsElectriques:build:production",
-              "serverTarget": "appareilsElectriques:server:production"
+              "browserTarget": "appElectriquesSSR:build:production",
+              "serverTarget": "appElectriquesSSR:server:production"
             },
             "development": {
-              "browserTarget": "appareilsElectriques:build:development",
-              "serverTarget": "appareilsElectriques:server:development"
+              "browserTarget": "appElectriquesSSR:build:development",
+              "serverTarget": "appElectriquesSSR:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -186,5 +179,5 @@
       }
     }
   },
-  "defaultProject": "appareilsElectriques"
+  "defaultProject": "appElectriquesSSR"
 }

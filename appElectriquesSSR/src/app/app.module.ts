@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { HomeComponent } from './modules/general/home/home.component';
+// import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppareilService } from './services/appareil.service';
 import { AuthService } from './services/auth.service';
@@ -42,7 +44,7 @@ const appRoutes:Routes = [
     NewUserComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'angular-starter' }),
     // AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {
