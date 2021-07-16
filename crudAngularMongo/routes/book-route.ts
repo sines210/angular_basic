@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import {  Input } from '@angular/core';
 
-import Book from '../models/book';
+import Book from '../models/Book';
 
 export class BookRoute {
 

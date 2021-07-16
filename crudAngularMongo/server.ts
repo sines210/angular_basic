@@ -20,9 +20,10 @@ export function app(): express.Express {
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
   const bookRoute : BookRoute = new BookRoute();
 
-mongoose.connect('mongodb://localhost/crudAngularMongo', {useNewUrlParser:true, useFindAndModify:false, useUnifiedTopology:true})
-.then(()=>{console.log('connection successful')})
-.catch((err)=>{console.log(err)});
+mongoose.connect('mongodb://127.0.0.1:27017/book', 
+{useNewUrlParser:true, useFindAndModify:false, useUnifiedTopology:true})
+.then(()=>{console.log('Connection successful')})
+.catch((err)=>{console.log('Connection failed')});
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({

@@ -4,10 +4,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Book } from './book';
 
-const apiUrl = 'http://localhost/book';
+const apiUrl = 'http://localhost:4000/book';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class ApiService {
 
